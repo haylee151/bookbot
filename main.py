@@ -1,14 +1,14 @@
-def main():
+def read_book():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
-        return file_contents
+    return file_contents
 
-def textToString():
-    words = main().split()
+def count_words():
+    words = read_book().split()
     return(len(words))
 
-def numEachChacter():
-    book_lower = main().lower()
+def count_characters_dict():
+    book_lower = read_book().lower()
     x_count = {}
     for word in book_lower:
         if word.isalpha():
@@ -19,15 +19,15 @@ def numEachChacter():
     return x_count
 
 def sort_dict():
-    res = numEachChacter()
-    for x in sorted(res, key=res.get, reverse=True):
-        print(f"The '{x}' characer was found {res[x]} times")
+    countDict = count_characters_dict()
+    for x in sorted(res, key=countDict.get, reverse=True):
+        print(f"The '{x}' character was found {countDict[x]} times")
     
 def report():
     print("--- Begin report of books/frankenstein.txt ---")      
-    print(f"{textToString()} words found in the document")      
+    print(f"{count_words()} words found in the document")      
     sort_dict()
     print("--- End report ---")
-    
+
 if __name__ == "__main__":
     report()
