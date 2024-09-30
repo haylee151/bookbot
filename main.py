@@ -7,13 +7,11 @@ def textToString():
     words = main().split()
     return(len(words))
 
-#function that takes the text from book as string returns number of times each character appears in string
 def numEachChacter():
     book_lower = main().lower()
-    #dictionary to hold character count
     x_count = {}
     for word in book_lower:
-        if word .isalpha():
+        if word.isalpha():
             if word in x_count:
                 x_count[word] += 1
             else:
@@ -30,6 +28,6 @@ def report():
     print(f"{textToString()} words found in the document")      
     sort_dict()
     print("--- End report ---")
+    
 if __name__ == "__main__":
-
     report()
