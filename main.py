@@ -20,7 +20,7 @@ def count_characters_dict():
 
 def sort_dict():
     countDict = count_characters_dict()
-    for x in sorted(res, key=countDict.get, reverse=True):
+    for x in sorted(countDict, key=countDict.get, reverse=True):
         print(f"The '{x}' character was found {countDict[x]} times")
     
 def report():
